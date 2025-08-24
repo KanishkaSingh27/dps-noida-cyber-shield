@@ -1,8 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { PasswordTester } from "@/components/password-tester"
+import { SecurityChecker } from "@/components/security-checker"
+import { PhishingSimulator } from "@/components/phishing-simulator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Shield, BookOpen, AlertTriangle, Lock, Eye, Globe, Download } from "lucide-react"
+import { Shield, BookOpen, AlertTriangle, Lock, Eye, Globe, Download, ExternalLink } from "lucide-react"
 
 export default function Resources() {
   const learningResources = [
@@ -101,32 +103,44 @@ export default function Resources() {
           <TabsContent value="tools" className="space-y-8">
             <div className="grid gap-8 lg:grid-cols-2">
               <PasswordTester />
+              <SecurityChecker />
+            </div>
+
+            <div className="grid gap-8 lg:grid-cols-2">
+              <PhishingSimulator />
               
               <Card className="cyber-card">
                 <CardHeader>
-                  <CardTitle className="text-gradient">Quick Security Check</CardTitle>
+                  <CardTitle className="text-gradient flex items-center gap-2">
+                    <Globe className="h-5 w-5" />
+                    Safe Browsing Checker
+                  </CardTitle>
                   <CardDescription>
-                    Assess your current digital security posture
+                    Check if websites are safe before visiting them
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm">Two-Factor Authentication</span>
-                      <Button variant="outline" size="sm">Check Status</Button>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm">Browser Security</span>
-                      <Button variant="outline" size="sm">Scan Now</Button>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm">Email Security</span>
-                      <Button variant="outline" size="sm">Verify</Button>
-                    </div>
+                  <div className="p-4 bg-muted/20 rounded-lg">
+                    <h4 className="font-medium mb-2">Quick Safety Tips:</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• Look for HTTPS (padlock icon) in the address bar</li>
+                      <li>• Check the URL carefully for misspellings</li>
+                      <li>• Avoid clicking suspicious links in emails</li>
+                      <li>• Use reputable antivirus software</li>
+                    </ul>
                   </div>
-                  <div className="pt-4 border-t">
-                    <Button className="w-full cyber-gradient text-white">
-                      Start Full Security Audit
+                  <div className="space-y-3">
+                    <Button className="w-full" variant="outline" asChild>
+                      <a href="https://transparencyreport.google.com/safe-browsing/search" target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        Google Safe Browsing Check
+                      </a>
+                    </Button>
+                    <Button className="w-full" variant="outline" asChild>
+                      <a href="https://www.virustotal.com/" target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        VirusTotal URL Scanner
+                      </a>
                     </Button>
                   </div>
                 </CardContent>

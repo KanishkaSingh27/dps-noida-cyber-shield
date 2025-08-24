@@ -8,18 +8,23 @@ const Index = () => {
   const achievements = [
     {
       icon: Users,
-      title: "50+",
-      description: "Students participated in our first quiz event"
+      title: "75+",
+      description: "Growing community of cyber-aware students"
+    },
+    {
+      icon: Trophy,
+      title: "1",
+      description: "Quiz event conducted with 50+ participants"
     },
     {
       icon: Shield,
-      title: "100%",
-      description: "Commitment to student digital safety"
+      title: "24/7",
+      description: "Support available for cyberbullying & scams"
     },
     {
       icon: BookOpen,
-      title: "Growing",
-      description: "Resource library for cybersecurity education"
+      title: "15+",
+      description: "Educational resources and security tools"
     }
   ]
 
@@ -102,7 +107,13 @@ const Index = () => {
       {/* Achievements Section */}
       <section className="py-16 bg-background/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-4">Our Growing Impact</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Building a stronger, safer digital community one student at a time
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {achievements.map((achievement, index) => (
               <Card key={index} className="cyber-card text-center hover:cyber-glow-accent transition-all duration-300">
                 <CardContent className="pt-6">
