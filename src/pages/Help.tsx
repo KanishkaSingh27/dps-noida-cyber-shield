@@ -1,0 +1,326 @@
+import { useState } from "react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Badge } from "@/components/ui/badge"
+import { Phone, Mail, AlertTriangle, Shield, MessageCircle, Clock, ExternalLink } from "lucide-react"
+import { useToast } from "@/hooks/use-toast"
+
+export default function Help() {
+  const { toast } = useToast()
+  const [helpForm, setHelpForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    urgency: "",
+    category: "",
+    description: ""
+  })
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    toast({
+      title: "Help Request Submitted",
+      description: "We've received your request and will respond within 24 hours. For urgent matters, please call the helpline numbers below.",
+    })
+    setHelpForm({
+      name: "",
+      email: "",
+      phone: "",
+      urgency: "",
+      category: "",
+      description: ""
+    })
+  }
+
+  const emergencyContacts = [
+    {
+      title: "National Cyber Crime Helpline",
+      number: "1930",
+      description: "24/7 helpline for reporting cyber crimes",
+      type: "emergency"
+    },
+    {
+      title: "Child Helpline",
+      number: "1098",
+      description: "24/7 helpline for children in distress",
+      type: "emergency"
+    },
+    {
+      title: "Women Helpline",
+      number: "181",
+      description: "24/7 helpline for women in distress",
+      type: "emergency"
+    }
+  ]
+
+  const supportCategories = [
+    {
+      title: "Cyberbullying",
+      description: "Someone is harassing or threatening you online",
+      icon: Shield,
+      urgency: "High"
+    },
+    {
+      title: "Scam/Fraud",
+      description: "You've encountered or fallen victim to an online scam",
+      icon: AlertTriangle,
+      urgency: "High"
+    },
+    {
+      title: "Privacy Concerns",
+      description: "Your personal information may have been compromised",
+      icon: Shield,
+      urgency: "Medium"
+    },
+    {
+      title: "General Guidance",
+      description: "Questions about online safety and security",
+      icon: MessageCircle,
+      urgency: "Low"
+    }
+  ]
+
+  const getUrgencyColor = (urgency: string) => {
+    switch (urgency) {
+      case "High":
+        return "bg-red-500/10 text-red-500 border-red-500/20"
+      case "Medium":
+        return "bg-yellow-500/10 text-yellow-500 border-yellow-500/20"
+      case "Low":
+        return "bg-green-500/10 text-green-500 border-green-500/20"
+      default:
+        return "bg-primary/10 text-primary border-primary/20"
+    }
+  }
+
+  return (
+    <div className="min-h-screen hero-gradient py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-gradient mb-4">
+            Get Help & Support
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            We're here to help you stay safe online. Report incidents, get guidance, or reach out for immediate assistance.
+          </p>
+        </div>
+
+        {/* Emergency Alert */}
+        <Alert className="mb-8 border-red-500/20 bg-red-500/10">
+          <AlertTriangle className="h-4 w-4 text-red-500" />
+          <AlertDescription className="text-red-500">
+            <strong>In case of immediate danger or emergency:</strong> Call 100 (Police) or use the emergency numbers below. 
+            For urgent cyber incidents, contact 1930 (National Cyber Crime Helpline) immediately.
+          </AlertDescription>
+        </Alert>
+
+        <div className="grid gap-8 lg:grid-cols-2">
+          {/* Help Request Form */}
+          <Card className="cyber-card">
+            <CardHeader>
+              <CardTitle className="text-gradient flex items-center gap-2">
+                <MessageCircle className="h-5 w-5" />
+                Request Help
+              </CardTitle>
+              <CardDescription>
+                Share your concerns with our support team. All requests are confidential.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Name (Optional)</Label>
+                    <Input
+                      id="name"
+                      placeholder="Your name"
+                      value={helpForm.name}
+                      onChange={(e) => setHelpForm({...helpForm, name: e.target.value})}
+                      className="cyber-border"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Phone (Optional)</Label>
+                    <Input
+                      id="phone"
+                      placeholder="Your phone number"
+                      value={helpForm.phone}
+                      onChange={(e) => setHelpForm({...helpForm, phone: e.target.value})}
+                      className="cyber-border"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="your.email@example.com"
+                    value={helpForm.email}
+                    onChange={(e) => setHelpForm({...helpForm, email: e.target.value})}
+                    className="cyber-border"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="category">Category</Label>
+                  <select
+                    className="w-full p-2 cyber-border rounded-md bg-background"
+                    value={helpForm.category}
+                    onChange={(e) => setHelpForm({...helpForm, category: e.target.value})}
+                    required
+                  >
+                    <option value="">Select category...</option>
+                    <option value="cyberbullying">Cyberbullying</option>
+                    <option value="scam">Scam/Fraud</option>
+                    <option value="privacy">Privacy Concerns</option>
+                    <option value="guidance">General Guidance</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="urgency">Urgency Level</Label>
+                  <select
+                    className="w-full p-2 cyber-border rounded-md bg-background"
+                    value={helpForm.urgency}
+                    onChange={(e) => setHelpForm({...helpForm, urgency: e.target.value})}
+                    required
+                  >
+                    <option value="">Select urgency...</option>
+                    <option value="low">Low - General question or guidance</option>
+                    <option value="medium">Medium - Concerning situation</option>
+                    <option value="high">High - Urgent help needed</option>
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="description">Description</Label>
+                  <Textarea
+                    id="description"
+                    placeholder="Please describe your situation or question in detail. The more information you provide, the better we can help you."
+                    value={helpForm.description}
+                    onChange={(e) => setHelpForm({...helpForm, description: e.target.value})}
+                    className="cyber-border resize-none"
+                    rows={6}
+                    required
+                  />
+                </div>
+
+                <div className="flex items-center gap-2 p-3 bg-primary/10 border border-primary/20 rounded-lg">
+                  <Clock className="h-4 w-4 text-primary" />
+                  <span className="text-sm text-primary">
+                    We typically respond within 24 hours during school days
+                  </span>
+                </div>
+
+                <Button type="submit" className="w-full cyber-gradient text-white">
+                  Submit Help Request
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+
+          {/* Emergency Contacts and Support Categories */}
+          <div className="space-y-6">
+            {/* Emergency Contacts */}
+            <Card className="cyber-card">
+              <CardHeader>
+                <CardTitle className="text-gradient flex items-center gap-2">
+                  <Phone className="h-5 w-5" />
+                  Emergency Helplines
+                </CardTitle>
+                <CardDescription>
+                  24/7 helplines for immediate assistance
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {emergencyContacts.map((contact, index) => (
+                    <div key={index} className="p-4 cyber-border rounded-lg">
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="font-medium">{contact.title}</h4>
+                        <Badge className="bg-red-500/10 text-red-500 border-red-500/20">
+                          Emergency
+                        </Badge>
+                      </div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <Phone className="h-4 w-4 text-primary" />
+                        <span className="text-lg font-bold text-primary">{contact.number}</span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">{contact.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Support Categories */}
+            <Card className="cyber-card">
+              <CardHeader>
+                <CardTitle className="text-gradient">How We Can Help</CardTitle>
+                <CardDescription>
+                  Common issues we assist students with
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {supportCategories.map((category, index) => (
+                    <div key={index} className="p-3 cyber-border rounded-lg">
+                      <div className="flex items-start gap-3">
+                        <div className="p-2 rounded-lg bg-primary/10 flex-shrink-0">
+                          <category.icon className="h-4 w-4 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between mb-1">
+                            <h4 className="font-medium">{category.title}</h4>
+                            <Badge className={`text-xs ${getUrgencyColor(category.urgency)}`}>
+                              {category.urgency}
+                            </Badge>
+                          </div>
+                          <p className="text-sm text-muted-foreground">{category.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Additional Resources */}
+            <Card className="cyber-card">
+              <CardHeader>
+                <CardTitle className="text-gradient flex items-center gap-2">
+                  <ExternalLink className="h-5 w-5" />
+                  Additional Resources
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <Button variant="outline" className="w-full justify-start" asChild>
+                    <a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      Report Cyber Crime Online
+                    </a>
+                  </Button>
+                  <Button variant="outline" className="w-full justify-start" asChild>
+                    <a href="mailto:cyberhelp@school.edu">
+                      <Mail className="h-4 w-4 mr-2" />
+                      Email Us Directly
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
