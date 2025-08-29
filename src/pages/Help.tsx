@@ -104,7 +104,7 @@ export default function Help() {
               <div className="w-full overflow-hidden rounded-lg cyber-border">
                 <iframe 
                   src="https://docs.google.com/forms/d/e/1FAIpQLSfa_zbTZiriIUe8IybNAWAHjP83DuNZcafKLiIHKlf0UlWJZA/viewform?embedded=true" 
-                  className="w-full h-[700px] lg:h-[800px] border-0"
+                  className="w-full h-[900px] lg:h-[1000px] border-0"
                   title="Help Request Form"
                 >
                   Loading…
