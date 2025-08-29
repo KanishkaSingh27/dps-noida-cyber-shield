@@ -110,13 +110,6 @@ export default function Help() {
                   Loading…
                 </iframe>
               </div>
-              
-              <div className="flex items-center gap-2 p-3 bg-primary/10 border border-primary/20 rounded-lg mt-4">
-                <Clock className="h-4 w-4 text-primary" />
-                <span className="text-sm text-primary">
-                  We typically respond within 24 hours during school days
-                </span>
-              </div>
             </CardContent>
           </Card>
 
