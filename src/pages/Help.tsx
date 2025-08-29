@@ -91,20 +91,11 @@ export default function Help() {
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Help Request Form */}
           <Card className="cyber-card">
-            <CardHeader>
-              <CardTitle className="text-gradient flex items-center gap-2">
-                <MessageCircle className="h-5 w-5" />
-                Request Help
-              </CardTitle>
-              <CardDescription>
-                Share your concerns with our support team. All requests are confidential.
-              </CardDescription>
-            </CardHeader>
             <CardContent className="p-2">
               <div className="w-full overflow-hidden rounded-lg cyber-border">
                 <iframe 
                   src="https://docs.google.com/forms/d/e/1FAIpQLSfa_zbTZiriIUe8IybNAWAHjP83DuNZcafKLiIHKlf0UlWJZA/viewform?embedded=true" 
-                  className="w-full h-[900px] lg:h-[1000px] border-0"
+                  className="w-full h-[1400px] border-0"
                   title="Help Request Form"
                 >
                   Loading…
