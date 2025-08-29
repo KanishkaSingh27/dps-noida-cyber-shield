@@ -256,25 +256,19 @@ export default function Magazine() {
 
             <Card className="cyber-card">
               <CardHeader>
-                <CardTitle className="text-gradient">Recent Submissions</CardTitle>
-                <CardDescription>
-                  See what your fellow students have contributed
-                </CardDescription>
+                <CardTitle className="text-gradient flex items-center gap-2">
+                  <BookOpen className="h-5 w-5" />
+                  Magazine Release
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
-                  {previousSubmissions.map((submission, index) => (
-                    <div key={index} className="p-3 cyber-border rounded-lg">
-                      <div className="flex items-start justify-between mb-2">
-                        <h4 className="font-medium">{submission.title}</h4>
-                        <Badge className={`text-xs ${getStatusColor(submission.status)}`}>
-                          {submission.status}
-                        </Badge>
-                      </div>
-                      <p className="text-sm text-muted-foreground mb-1">{submission.author}</p>
-                      <p className="text-xs text-muted-foreground">{submission.type}</p>
-                    </div>
-                  ))}
+                <div className="text-center p-6 cyber-border rounded-lg bg-primary/5">
+                  <div className="text-4xl mb-3">📚</div>
+                  <h3 className="text-xl font-semibold mb-2 text-gradient">Coming in December!</h3>
+                  <p className="text-muted-foreground">
+                    Our annual cybersecurity magazine will be released in December. 
+                    Start working on your submissions now to be featured in this year's edition!
+                  </p>
                 </div>
               </CardContent>
             </Card>
