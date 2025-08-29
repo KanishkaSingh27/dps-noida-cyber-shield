@@ -4,8 +4,8 @@ import { CountdownTimer } from "@/components/countdown-timer"
 import { Calendar, Users, Trophy, Clock } from "lucide-react"
 
 export default function Events() {
-  // Example upcoming event - you can modify this date
-  const upcomingEvent = new Date("2024-12-15T10:00:00")
+  // Countdown to December 15th
+  const upcomingEvent = new Date("2025-12-15T10:00:00")
 
   const pastEvents = [
     {
@@ -23,7 +23,7 @@ export default function Events() {
     {
       id: 1,
       title: "Annual Cyber Safety Workshop",
-      date: "December 15, 2024",
+      date: "December 15, 2025",
       time: "10:00 AM",
       description: "Interactive workshop on latest cyber threats and protection strategies",
       type: "Workshop"
@@ -53,7 +53,7 @@ export default function Events() {
             <CountdownTimer 
               targetDate={upcomingEvent}
               eventName="Annual Cyber Safety Workshop"
-              description="December 15, 2024 at 10:00 AM"
+              description="December 15, 2025 at 10:00 AM"
             />
           </div>
 
