@@ -1,40 +1,10 @@
-import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
 import { Phone, Mail, AlertTriangle, Shield, MessageCircle, Clock, ExternalLink } from "lucide-react"
-import { useToast } from "@/hooks/use-toast"
 
 export default function Help() {
-  const { toast } = useToast()
-  const [helpForm, setHelpForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    urgency: "",
-    category: "",
-    description: ""
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    toast({
-      title: "Help Request Submitted",
-      description: "We've received your request and will respond within 24 hours. For urgent matters, please call the helpline numbers below.",
-    })
-    setHelpForm({
-      name: "",
-      email: "",
-      phone: "",
-      urgency: "",
-      category: "",
-      description: ""
-    })
-  }
 
   const emergencyContacts = [
     {
@@ -130,100 +100,23 @@ export default function Help() {
                 Share your concerns with our support team. All requests are confidential.
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name (Optional)</Label>
-                    <Input
-                      id="name"
-                      placeholder="Your name"
-                      value={helpForm.name}
-                      onChange={(e) => setHelpForm({...helpForm, name: e.target.value})}
-                      className="cyber-border"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone (Optional)</Label>
-                    <Input
-                      id="phone"
-                      placeholder="Your phone number"
-                      value={helpForm.phone}
-                      onChange={(e) => setHelpForm({...helpForm, phone: e.target.value})}
-                      className="cyber-border"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="your.email@example.com"
-                    value={helpForm.email}
-                    onChange={(e) => setHelpForm({...helpForm, email: e.target.value})}
-                    className="cyber-border"
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="category">Category</Label>
-                  <select
-                    className="w-full p-2 cyber-border rounded-md bg-background"
-                    value={helpForm.category}
-                    onChange={(e) => setHelpForm({...helpForm, category: e.target.value})}
-                    required
-                  >
-                    <option value="">Select category...</option>
-                    <option value="cyberbullying">Cyberbullying</option>
-                    <option value="scam">Scam/Fraud</option>
-                    <option value="privacy">Privacy Concerns</option>
-                    <option value="guidance">General Guidance</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="urgency">Urgency Level</Label>
-                  <select
-                    className="w-full p-2 cyber-border rounded-md bg-background"
-                    value={helpForm.urgency}
-                    onChange={(e) => setHelpForm({...helpForm, urgency: e.target.value})}
-                    required
-                  >
-                    <option value="">Select urgency...</option>
-                    <option value="low">Low - General question or guidance</option>
-                    <option value="medium">Medium - Concerning situation</option>
-                    <option value="high">High - Urgent help needed</option>
-                  </select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="description">Description</Label>
-                  <Textarea
-                    id="description"
-                    placeholder="Please describe your situation or question in detail. The more information you provide, the better we can help you."
-                    value={helpForm.description}
-                    onChange={(e) => setHelpForm({...helpForm, description: e.target.value})}
-                    className="cyber-border resize-none"
-                    rows={6}
-                    required
-                  />
-                </div>
-
-                <div className="flex items-center gap-2 p-3 bg-primary/10 border border-primary/20 rounded-lg">
-                  <Clock className="h-4 w-4 text-primary" />
-                  <span className="text-sm text-primary">
-                    We typically respond within 24 hours during school days
-                  </span>
-                </div>
-
-                <Button type="submit" className="w-full cyber-gradient text-white">
-                  Submit Help Request
-                </Button>
-              </form>
+            <CardContent className="p-2">
+              <div className="w-full overflow-hidden rounded-lg cyber-border">
+                <iframe 
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSfa_zbTZiriIUe8IybNAWAHjP83DuNZcafKLiIHKlf0UlWJZA/viewform?embedded=true" 
+                  className="w-full h-[700px] lg:h-[800px] border-0"
+                  title="Help Request Form"
+                >
+                  Loading…
+                </iframe>
+              </div>
+              
+              <div className="flex items-center gap-2 p-3 bg-primary/10 border border-primary/20 rounded-lg mt-4">
+                <Clock className="h-4 w-4 text-primary" />
+                <span className="text-sm text-primary">
+                  We typically respond within 24 hours during school days
+                </span>
+              </div>
             </CardContent>
           </Card>
 
