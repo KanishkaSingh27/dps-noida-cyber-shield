@@ -77,7 +77,7 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button size="lg" className="cyber-gradient text-white text-lg px-8 py-6" asChild>
-                  <a href="https://forms.google.com/your-form-link" target="_blank" rel="noopener noreferrer">
+                  <a href="https://forms.gle/QJRRo9u4iaPTr95S7" target="_blank" rel="noopener noreferrer">
                     Join Our Club
                     <ExternalLink className="ml-2 h-5 w-5" />
                   </a>
@@ -221,7 +221,7 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="cyber-gradient text-white text-lg px-8 py-6" asChild>
-              <a href="https://forms.google.com/your-form-link" target="_blank" rel="noopener noreferrer">
+              <a href="https://forms.gle/QJRRo9u4iaPTr95S7" target="_blank" rel="noopener noreferrer">
                 Join the Club
                 <ExternalLink className="ml-2 h-5 w-5" />
               </a>
