@@ -13,28 +13,32 @@ export default function Resources() {
       description: "Learn how to create and manage strong passwords",
       icon: Lock,
       type: "Guide",
-      difficulty: "Beginner"
+      difficulty: "Beginner",
+      url: "https://example.com/password-guide"
     },
     {
       title: "Social Engineering Awareness",
       description: "Recognize and prevent social engineering attacks",
       icon: Eye,
       type: "Course",
-      difficulty: "Intermediate"
+      difficulty: "Intermediate",
+      url: "https://example.com/social-engineering"
     },
     {
       title: "Safe Internet Browsing",
       description: "Best practices for secure web browsing",
       icon: Globe,
       type: "Tutorial",
-      difficulty: "Beginner"
+      difficulty: "Beginner",
+      url: "https://example.com/safe-browsing"
     },
     {
       title: "Mobile Device Security",
       description: "Secure your smartphone and tablet",
       icon: Shield,
       type: "Guide",
-      difficulty: "Beginner"
+      difficulty: "Beginner",
+      url: "https://example.com/mobile-security"
     }
   ]
 
@@ -43,19 +47,22 @@ export default function Resources() {
       title: "Cybersecurity Checklist",
       description: "A comprehensive checklist for personal cybersecurity",
       type: "PDF",
-      size: "2.3 MB"
+      size: "2.3 MB",
+      url: "https://example.com/downloads/cybersecurity-checklist.pdf"
     },
     {
       title: "Incident Response Guide",
       description: "What to do when you suspect a security breach",
       type: "PDF",
-      size: "1.8 MB"
+      size: "1.8 MB",
+      url: "https://example.com/downloads/incident-response.pdf"
     },
     {
       title: "Privacy Settings Guide",
       description: "Configure privacy settings for popular social media platforms",
       type: "PDF",
-      size: "3.1 MB"
+      size: "3.1 MB",
+      url: "https://example.com/downloads/privacy-settings.pdf"
     }
   ]
 
@@ -197,8 +204,10 @@ export default function Resources() {
                   <CardContent>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">{resource.type}</span>
-                      <Button size="sm" className="cyber-gradient text-white">
-                        Start Learning
+                      <Button size="sm" className="cyber-gradient text-white" asChild>
+                        <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                          Start Learning
+                        </a>
                       </Button>
                     </div>
                   </CardContent>
@@ -226,8 +235,10 @@ export default function Resources() {
                   <CardContent>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">{resource.size}</span>
-                      <Button size="sm" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-                        Download
+                      <Button size="sm" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground" asChild>
+                        <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                          Download
+                        </a>
                       </Button>
                     </div>
                   </CardContent>
