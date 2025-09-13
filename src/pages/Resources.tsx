@@ -14,7 +14,7 @@ export default function Resources() {
       icon: Lock,
       type: "Guide",
       difficulty: "Beginner",
-      url: "https://example.com/password-guide"
+      url: "https://docs.google.com/document/d/1iO6qu72c1Myw5OaVC1Y3ALDSc9wWbME3l5zBJQUxvBs/edit?usp=sharing"
     },
     {
       title: "Social Engineering Awareness",
