@@ -22,7 +22,7 @@ export default function Resources() {
       icon: Eye,
       type: "Course",
       difficulty: "Intermediate",
-      url: "https://example.com/social-engineering"
+      url: "https://docs.google.com/document/d/1h-RXE0wwEzevpfMqrBzufW0qZxhbs9aBwpRp51o1DeY/edit?usp=sharing"
     },
     {
       title: "Safe Internet Browsing",
