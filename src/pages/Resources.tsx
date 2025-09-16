@@ -22,7 +22,7 @@ export default function Resources() {
       icon: Eye,
       type: "Course",
       difficulty: "Intermediate",
-      url: "https://docs.google.com/document/d/1h-RXE0wwEzevpfMqrBzufW0qZxhbs9aBwpRp51o1DeY/edit?usp=sharing"
+      url: "https://docs.google.com/document/d/1ytrXn4gaZ5ak6vir64umE-HfcAS-FJoaPAiwLxwtfmo/edit?usp=sharing"
     },
     {
       title: "Safe Internet Browsing",
@@ -47,23 +47,28 @@ export default function Resources() {
       title: "Cybersecurity Checklist",
       description: "A comprehensive checklist for personal cybersecurity",
       type: "PDF",
-      size: "2.3 MB",
+     
       url: "https://example.com/downloads/cybersecurity-checklist.pdf"
     },
     {
       title: "Incident Response Guide",
       description: "What to do when you suspect a security breach",
       type: "PDF",
-      size: "1.8 MB",
+      
       url: "https://example.com/downloads/incident-response.pdf"
     },
     {
       title: "Privacy Settings Guide",
       description: "Configure privacy settings for popular social media platforms",
       type: "PDF",
-      size: "3.1 MB",
+      
       url: "https://example.com/downloads/privacy-settings.pdf"
-    }
+    },
+    {
+      title: "Social Engineering Guide",
+      description: "Understand why password security matters and how you can create and manage safe passwords.",
+      type: "PDF",
+      url:"https://docs.google.com/document/d/1h-RXE0wwEzevpfMqrBzufW0qZxhbs9aBwpRp51o1DeY/edit?usp=sharing"
   ]
 
   const getDifficultyColor = (difficulty: string) => {
