@@ -69,7 +69,7 @@ export default function Resources() {
       description: "Understand why password security matters and how you can create and manage safe passwords.",
       type: "PDF",
       url:"https://docs.google.com/document/d/1h-RXE0wwEzevpfMqrBzufW0qZxhbs9aBwpRp51o1DeY/edit?usp=sharing"
-  ]
+    }
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
