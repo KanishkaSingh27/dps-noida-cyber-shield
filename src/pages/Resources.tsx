@@ -46,22 +46,19 @@ export default function Resources() {
     {
       title: "Cybersecurity Checklist",
       description: "A comprehensive checklist for personal cybersecurity",
-      type: "PDF",
-     
+      type: "PDF", 
       url: "https://example.com/downloads/cybersecurity-checklist.pdf"
     },
     {
       title: "Incident Response Guide",
       description: "What to do when you suspect a security breach",
       type: "PDF",
-      
       url: "https://example.com/downloads/incident-response.pdf"
     },
     {
       title: "Privacy Settings Guide",
       description: "Configure privacy settings for popular social media platforms",
       type: "PDF",
-      
       url: "https://example.com/downloads/privacy-settings.pdf"
     },
     {
@@ -69,7 +66,7 @@ export default function Resources() {
       description: "Understand why password security matters and how you can create and manage safe passwords.",
       type: "PDF",
       url:"https://docs.google.com/document/d/1h-RXE0wwEzevpfMqrBzufW0qZxhbs9aBwpRp51o1DeY/edit?usp=sharing"
-    }
+    }]
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
