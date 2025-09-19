@@ -23,7 +23,7 @@ export default function Events() {
     {
       id: 1,
       title: "Cyber Crime Awareness Talk",
-      date: "November 1st, 2025  (Exact date to be decided)",
+      date: "November 1st, 2025  (Exact date TBD)",
       time:"9 am",
       description: "Interactive session on latest cyber threats and protection strategies from cyber crime experts.",
       type: "Talk"
@@ -53,7 +53,7 @@ export default function Events() {
             <CountdownTimer 
               targetDate={upcomingEvent}
               eventName="Cyber Crime Awareness talk"
-              description="November 1st, 2025 at 10:00 AM"
+              description="November 1st, 2025 at 9:00 AM"
             />
           </div>
 
