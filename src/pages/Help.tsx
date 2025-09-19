@@ -187,7 +187,7 @@ export default function Help() {
                     </a>
                   </Button>
                   <Button variant="outline" className="w-full justify-start" asChild>
-                    <a href="mailto:cyberhelp@school.edu">
+                    <a href="mailto:2014274kanishka@dpsnoida.co.in">
                       <Mail className="h-4 w-4 mr-2" />
                       Email Us Directly
                     </a>
