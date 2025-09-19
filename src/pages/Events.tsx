@@ -5,7 +5,7 @@ import { Calendar, Users, Trophy, Clock } from "lucide-react"
 
 export default function Events() {
   // Countdown to December 15th
-  const upcomingEvent = new Date("2025-12-15T10:00:00")
+  const upcomingEvent = new Date("2025-11-01T09:00:00")
 
   const pastEvents = [
     {
