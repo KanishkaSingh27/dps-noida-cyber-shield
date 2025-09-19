@@ -47,7 +47,7 @@ export default function Resources() {
       title: "Cybersecurity Checklist",
       description: "A comprehensive checklist for personal cybersecurity",
       type: "PDF", 
-      url: "https://example.com/downloads/cybersecurity-checklist.pdf"
+      url: "https://docs.google.com/document/d/1Jlan_6-hRi6kfMRvq2GP1BtTHDGK2_U-YI8iiQ18hR4/edit?usp=sharing"
     },
     {
       title: "Incident Response Guide",
