@@ -79,7 +79,7 @@ export const Footer = () => {
             <h3 className="text-lg font-semibold">Get Involved</h3>
             <div className="space-y-3">
               <a 
-                href="https://forms.google.com/your-form-link" 
+                href="https://docs.google.com/forms/d/e/1FAIpQLScpZxpPMVItnjuU6TUW_dNXcgooP7prEjjlQVNqHEJhpkgS4g/viewform" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
