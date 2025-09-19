@@ -22,11 +22,10 @@ export default function Events() {
   const upcomingEvents = [
     {
       id: 1,
-      title: "Annual Cyber Safety Workshop",
-      date: "December 15, 2025",
-      time: "10:00 AM",
-      description: "Interactive workshop on latest cyber threats and protection strategies",
-      type: "Workshop"
+      title: "Cyber Crime Awareness Talk",
+      date: "November, 2025  (Exact date to be decided)",
+      description: "Interactive session on latest cyber threats and protection strategies from cyber crime experts.",
+      type: "Talk"
     }
   ]
 
